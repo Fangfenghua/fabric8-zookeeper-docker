@@ -1,9 +1,9 @@
-FROM jboss/base-jdk:7
+FROM centos
 
-MAINTAINER iocanel@gmail.com
+MAINTAINER 44917134@qq.com
 
 USER root
-RUN yum -y install wget socat \
+RUN yum -y install wget java tar.x86_64 \
     && wget -q -O - http://apache.mirrors.pair.com/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz | tar -xzf - -C /opt \
     && mv /opt/zookeeper-3.4.6 /opt/zookeeper \
     && cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg \
